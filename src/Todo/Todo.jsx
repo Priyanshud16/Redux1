@@ -16,19 +16,16 @@ const dispatch=useDispatch()
     }
    
     dispatch(AddTodo(newTodo))
-    setTodoData(todos)
   }
+
+
   return (
     <div>
     <TodoAdd  HandleAdd={HandleAdd}/>
 
    {
     todos.map((ele)=>{
-      return <div style={{border:"1px solid black" ,padding:"10px",margin:"20px"}}>
-        <p>{ele.id}</p>
-        <p>{ele.title}</p>
-        <p>{ele.status?"Completed" : "Pending"}</p>
-      </div>
+      return <TodoItem {...ele}/>
     })
    }
     </div>

@@ -2,7 +2,7 @@ import React, { useContext } from 'react'
 import { AuthContext } from './Auth'
 import { Navigate } from 'react-router-dom'
 
-function PrivateRoutes() {
+function PrivateRoutes({children}) {
     const {Auth}=useContext(AuthContext)
   return (
     Auth.isAuth? children : <Navigate to='/'/>
