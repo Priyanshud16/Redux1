@@ -5,6 +5,7 @@ import { useSelector } from 'react-redux'
 import { AddTodo } from '../redux/action'
 import { AuthContext } from '../AuthContext/Auth'
 import {useNavigate} from 'react-router-dom'
+import { Input } from '@chakra-ui/react'
 
 // const defaultState={
 //     email:"",
@@ -66,9 +67,12 @@ function Login() {
   return (
     <div>
         <form onSubmit={HandleSubmit}>
-        <input type="text" placeholder='Enter Your Email' name='email' onChange={HandleChange} />
-        <input type="password" placeholder='Enter Your Password' name='password' onChange={HandleChange}  />
-        <button>Submit</button>
+        <Input type="text" placeholder='Enter Your Email' name='email' onChange={HandleChange} w={300} />
+        <br />
+        <br />
+        <Input type="password" placeholder='Enter Your Password' name='password' onChange={HandleChange} w={300} />
+        <br />
+        <button style={{marginTop:"10px",border:"1px solid black",width:"100px"}}>Submit</button>
         </form>
     </div>
   )
